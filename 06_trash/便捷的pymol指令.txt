@@ -1,0 +1,52 @@
+
+## 移除溶剂
+
+remove solvent
+remove resn 0+POT+CLA
+remove chain A
+
+## 选择符合格式的文件
+
+选择指定位置的残基：select R963,object wt2_1 and chain A resi 963
+
+选择指定名称的残基：select POTs,resn POT
+
+# 保存文件
+
+save C:\Users\29701\Desktop\毕业设计\04 毕设-结果-结果分析\Python与PyMOL批量处理\output\保存文件夹\文件名称.pdb,(all)
+
+————————————
+
+# 选择链A的963位Cα原子
+select ca_A963, chain A and resi 963 and name CA
+
+# 选择链B的28位A碱基的N1和C6原子
+select atoms_B28, chain B and resi 28 and name N1+C6
+
+# 创建一个伪原子来代表B链28位A碱基N1-C6环的质心
+pseudoatom com_B28, (chain B and resi 28 and name N1+C6)
+
+# 计算A链963位Cα原子与B链28位A碱基质心之间的距离
+distance dist_A963_comB28, ca_A963, com_B28
+
+
+# 选择链B 27位A碱基的C3'原子
+select atom_B27_C3, chain B and resi 27 and name C3'
+
+# 选择链B 28位A碱基的C3'原子
+select atom_B28_C3, chain B and resi 28 and name C3'
+
+# 选择链B 27位A碱基的C8原子
+select atom_B27_C8, chain B and resi 27 and name C8
+
+# 选择链B 27位A碱基的C2原子
+select atom_B27_C2, chain B and resi 27 and name C2
+
+# 计算二面角 θ
+dihedral dihedral_theta, atom_B27_C3, atom_B28_C3, atom_B27_C8, atom_B27_C2
+
+
+
+
+
+
