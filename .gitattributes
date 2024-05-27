@@ -1,0 +1,1 @@
+all_origin_object.pse filter=lfs diff=lfs merge=lfs -text
