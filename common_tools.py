@@ -1,4 +1,3 @@
-from common_constants import *
 import pymol
 import selenium
 import requests
@@ -138,7 +137,8 @@ def remove_selection(selection="(all)"):
 
 # TODO 指定字体路径，但目前还找不到显示“Å”的方式
 def set_plot_font():
-    font_path = r'C:\Windows\Fonts\PingFang SC.ttf'  # 替换为实际字体文件路径
+    # font_path = r'C:\Windows\Fonts\苹方 中.ttf'  # 替换为实际字体文件路径
+    font_path = r'C:\Users\29701\AppData\Local\Microsoft\Windows\Fonts\PingFang-Medium.ttf'  # 替换为实际字体文件路径
     font_prop = fm.FontProperties(fname=font_path)
     plt.rcParams['font.sans-serif'] = [font_prop.get_name()]  # 使用黑体
     plt.rcParams['axes.unicode_minus'] = False  # 正常显示负号
